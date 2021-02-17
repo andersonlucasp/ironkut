@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <link rel="stylesheet" href="../public/stylesheets/style.scss">
+    <title>Document</title>
+</head>
+<body>
+
+
+   <div id="signup">
+    <h2>Login</h2>
+    <p>Acesse o <b>Ironkut</b> com a sua conta</p>
+    <form action="/login" method="POST">
+        <label for="input-email" class= "email">Email</label>
+        <input type="email" id="input-email" name="email" placeholder="Your email" />
+
+        <label for="input-password" class="password">Password</label>
+        <input type="password" name="password" id="input-password" placeholder="********" />
+
+        <button type="submit" class="btt"> Login </button>
+
+        {{#if errorMessage}}
+        <p class='error'>{{errorMessage}}</p>
+        {{/if}}
+
+
+    </form>
+</div> 
+</body>
+</html>
