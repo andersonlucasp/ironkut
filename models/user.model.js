@@ -19,16 +19,32 @@ const userSchema = new Schema({
         unique: true,
         lowcase: true,
         trim: true,
-        match: [/^\S+@\S+\.\S+$/, 'Please use a valid email address.'],
+        match: [/^\S+@\S+\.\S+$/, 'Please use a valid email address'],
     },
-    passWordHash: {
+    passwordHash: {
         type: String,
         require: [true, 'the password is require.'],
-    }
+
+    },
+    birthday: {
+        type: Date,
+        require: [true, 'Please choise a birthday']
+    },
+
+    country: {
+        type: String,
+        require: [true, 'Please choise a country']
+    },
+    genre: {
+        type: String,
+        enum: ['female', 'male', 'others'],
+        require: [true, 'Please choise a genre']
+    },
+
 
 });
 
-//colocar data de nasc. e país <<<<<<<<
+
 
 const User = model('user', userSchema);
 

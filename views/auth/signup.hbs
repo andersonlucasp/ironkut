@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IRONKUT Signup</title>
+</head>
+
+<body>
+
+
+  <h2>Signup</h2>
+  <h3>Welcome to <b>Ironkut</b>! </h3>
+  <p> We just need to confirm a few things before you start using Ironkut:</p>
+
+  <div id="signup">
+    <form action="/signup" method="POST">
+
+      <fieldset>
+        <label for="input-username">Username</label>
+        <input type="text" id="input-username" name="username" placeholder="Your username" />
+        <label for="input-last">Lastname</label>
+        <input type="text" id="input-lastname" name="lastname" placeholder="Your lastname" />
+      </fieldset>
+
+      <fieldset>
+        <label for="input-email" >E-mail </label>
+        <input type="email" class="input-email" name="email" id="inputEmail1" aria-describedby="emailHelp">
+        <label for="exampleInputPassword1"  class="form-label">Password</label>
+        <input type="password" class="input-email" name="password" id="exampleInputPassword1">
+
+
+      </fieldset>
+
+      <fieldset>
+        <p>Birthday</p>
+        <input id="date" type="date" name="birthday" >
+      </fieldset>
+
+      <fieldset>
+        <input class="form-check-input" type="radio" name="genre"  value="female" id="flexRadioDefault1">
+        <label class="form-check-label" for="flexRadioDefault1">
+          Female
+        </label>
+        <input class="form-check-input" type="radio" name="genre" value="male" id="flexRadioDefault2">
+        <label class="form-check-label" for="flexRadioDefault2">
+          Male
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <select class="form-select" aria-label="Default select example" name="country">
+          <option selected>Country</option>
+          <option value="BR">BR</option>
+          <option value="PT">PT</option>
+          <option value="USA">USA</option>
+        </select>
+      </fieldset>
+
+      <button type="submit">Create</button>
+
+      {{#if errorMessage}}
+
+      <div class="error-msg">{{errorMessage}} </div>
+
+      {{/if}}
+
+    </form>
+
+  </div>
+
+</body>
+
+</html>
