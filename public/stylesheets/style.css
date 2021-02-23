@@ -1,0 +1,17 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+
+body {
+  background-color: #d9e5f7; }
+
+#signup {
+  margin: 3cm solid red; }
+
+#signup .firstname {
+  margin: 3cm solid red; }
+
+/*# sourceMappingURL=style.css.map */
