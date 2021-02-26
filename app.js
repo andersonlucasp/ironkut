@@ -26,7 +26,6 @@ const app = express();
 
 require('./configs/session.configs')(app);
 
-
 // Middleware Setup
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -45,12 +44,8 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
-
-
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
-
-
 
 const index = require('./routes/index');
 app.use('/', index);
@@ -61,9 +56,13 @@ app.use('/', signup)
 const login = require('./routes/auth.routes');
 app.use('/', login)
 
+const editProfile = require('./routes/edit.profile');
+app.use('/', editProfile);
+
 const userProfile = require('./routes/auth.routes');
 app.use('/', userProfile);
 
-
+const profile = require('./routes/profile');
+app.use('/', profile);
 
 module.exports = app;

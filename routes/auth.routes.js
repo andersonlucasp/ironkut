@@ -5,9 +5,6 @@ const mongoose = require('mongoose');
 //user model
 const User = require('../models/user.model');
 
-
-
-
 //bcrypt
 const bcrypt = require('bcryptjs');
 const bcryptSalt = 10;
@@ -17,7 +14,6 @@ router.get('/signup', (req, res, next) => res.render('auth/signup'));
 
 //post signup
 router.post('/signup', (req, res, next) => {
-
 
     const { username, lastname, password, email, birthday, country, genre } = req.body;
 
@@ -83,7 +79,7 @@ router.post('/login', (req, res, next) => {
                 return;
             } else if (bcrypt.compareSync(password, user.passwordHash)) {
                 req.session.currentUser = user;
-                res.redirect('/userProfile');
+                res.redirect(`/editProfile/${user._id}`);
             } else {
                 res.render('auth/login', { errorMessage: 'Incorrect password.' });
             }

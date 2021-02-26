@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IRONKUT Edit Profile</title>
+</head>
+    <body>
+
+        <h1>Edit Profile</h1>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#">Home</a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="#">Profile</a>
+                            </li>
+                            <li class="breadcrumb-item active">
+                                Edit Profile
+                            </li>
+                        </ol>
+                    </nav>
+
+                    <form role="form" method="POST" action="/editProfile/{{_id}}">
+
+                        <div class="form-group">
+                            <label for="input-username">
+                                Username
+                            </label>
+                            <input type="text" id="input-username" name="username" value="{{username}}" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="input-last">
+                                Lastname
+                            </label>
+                            <input type="text" id="input-lastname" name="lastname" value="{{lastname}}" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="relationship">
+                                Relationship
+                            </label>
+                            <input type="text" class="form-control"  id="relationship" name="relationship" value="{{relationship}}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="state">
+                                State
+                            </label>
+                            <input type="text" class="form-control" id="state" name="state" value="{{state}}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city">
+                                City
+                            </label>
+                            <input type="text" class="form-control" id="city" name="city" value="{{city}}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hobbies">
+                                Hobbies
+                            </label>
+                            <input type="text" class="form-control" id="hobbies" name="hobbies" value="{{hobbies}}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="interestedin">
+                                Interestedin
+                            </label>
+                            <input type="text" class="form-control" id="interestedin" name="interestedin" value="{{interestedin}}">
+                        </div>
+                    
+                        <button type="submit" class="btn btn-primary">
+                            Save
+                        </button>
+                    </form>  
+                </div>
+            </div>         
+        </div>
+    </body>
+</html>
