@@ -38,13 +38,27 @@ const userSchema = new Schema({
     genre: {
         type: String,
         enum: ['female', 'male', 'others'],
-        require: [true, 'Please choise a genre']
+        require: [true, 'Please choose a genre']
     },
-
+    relationship: {
+        type: String,
+        enum: ['Single', 'Dating', 'Married', 'Divorced']
+    },
+    state: {
+        type: String,
+    },
+    city: {
+        type: String,
+    },
+    hobbies: {
+        type: String,
+    },
+    interestedin: {
+        type: [String],
+        enum: ['Friends', 'Networking', 'Dating']
+    }
 
 });
-
-
 
 const User = model('user', userSchema);
 
