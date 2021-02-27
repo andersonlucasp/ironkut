@@ -8,13 +8,9 @@ const mongoose = require('mongoose');
 const User = require('../models/user.model');
 
 //get
-router.get('/editProfile/:id', (req, res) => {
-  const { id } = req.params;
-  User.findById(id)
-    .then(userToEdit => {
-      res.render('edit/edit-profile', userToEdit); // <-- add this line
-    })
-    .catch(error => console.log(`Error while getting a single book for edit: ${error}`));
+router.get('/editProfile/', (req, res) => {
+  const  {currentUser} = req.session;
+      res.render('home-page', {userToEdit:currentUser});
 });
 
 router.post('/editProfile/:id', (req,res) => {

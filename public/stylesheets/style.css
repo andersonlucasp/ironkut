@@ -3,7 +3,8 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
-  color: #00B7FF; }
+  color: #00B7FF;
+ }
 
 body {
   background-color: #d9e5f7; }
@@ -14,4 +15,18 @@ body {
 #signup .firstname {
   margin: 3cm solid red; }
 
+#nav-left{
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: baseline;
+	align-content: center;
+}
+a{
+  text-decoration: none;
+}
+li{
+  list-style: none;
+}
 /*# sourceMappingURL=style.css.map */

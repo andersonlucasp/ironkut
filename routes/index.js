@@ -14,24 +14,5 @@ router.get('/', (req, res, next) => {
 
 /* GET Signup */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //exportando
 module.exports = router;

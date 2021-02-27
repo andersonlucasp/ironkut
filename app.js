@@ -39,13 +39,12 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
+//Partials configuration
+hbs.registerPartials(path.join(__dirname, "/views/partials"));
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
+
 
 const index = require('./routes/index');
 app.use('/', index);
@@ -64,5 +63,9 @@ app.use('/', userProfile);
 
 const profile = require('./routes/profile');
 app.use('/', profile);
+
+const homePage = require('./routes/home.page');
+app.use('/', homePage);
+
 
 module.exports = app;
