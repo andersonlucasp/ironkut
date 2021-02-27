@@ -44,21 +44,19 @@ const userSchema = new Schema({
         type: String,
         enum: ['Single', 'Dating', 'Married', 'Divorced']
     },
-    state: {
-        type: String,
-    },
-    city: {
-        type: String,
-    },
-    hobbies: {
-        type: String,
-    },
+    state: String,
+    
+    city: String,
+
+    hobbies: String,
+
     interestedin: {
         type: [String],
         enum: ['Friends', 'Networking', 'Dating']
-    }
-
-});
+    },
+    following:[{ type: Schema.Types.ObjectId, ref: 'user' }],
+    followers:[{ type: Schema.Types.ObjectId, ref: 'user' }],
+    });
 
 const User = model('user', userSchema);
 

@@ -8,17 +8,14 @@ const mongoose = require('mongoose');
 const User = require('../models/user.model');
 
 //get
-router.get('/editProfile/:id', (req, res) => {
-  const { id } = req.params;
-  User.findById(id)
-    .then(userToEdit => {
-      res.render('edit/edit-profile', userToEdit); // <-- add this line
-    })
-    .catch(error => console.log(`Error while getting a single book for edit: ${error}`));
+router.get('/editProfile/', (req, res) => {
+  const  {currentUser} = req.session;
+      res.render('edit/edit-profile', {userToEdit:currentUser});
 });
 
-router.post('/editProfile/:id', (req,res) => {
-  const { id } = req.params;
+router.post('/editProfile/', (req,res) => {
+  const {currentUser} = req.session;
+     
   const {
     username,
     lastname,
@@ -29,7 +26,7 @@ router.post('/editProfile/:id', (req,res) => {
     interestedin
   } = req.body;
 
-  User.findByIdAndUpdate(id, {
+  User.findByIdAndUpdate(currentUser._id, {
     username,
     lastname,
     relationship,
@@ -38,7 +35,12 @@ router.post('/editProfile/:id', (req,res) => {
     hobbies,
     interestedin
   },
-  {new: true}).then(updateUser => res.redirect(`/profile/${updateUser._id}`)).catch(error => console.log(`Error while updating your user. Please try again!`));
+  {new: true})
+  .then(updateUser => {
+    req.session.currentUser = updateUser;
+    res.redirect(`/profile/`)
+  })
+  .catch(error => console.log(`Error while updating your user. Please try again!`));
   
 });
 
