@@ -1,2 +1,14 @@
 {{> sideBar currentUser}} 
+<form action="/post" method="POST">
+
+<label for="input-post">Post</label>
+  <input type="text" id="input-post" name="message" placeholder=" digita ai" />
+  <button type="submit">Send</button>
+
+</form>
+
+{{#each postsFromDb}}
+  <div>{{this.message}}</div>
+
+{{/each}}
 
