@@ -1,2 +1,18 @@
 {{> sideBar currentUser}} 
+<form action="/post" method="POST">
+
+<label for="input-post">Ironte</label>
+  <input type="text" id="input-post" name="message" placeholder=" digita ai" />
+  <button type="submit">Send</button>
+  {{#if errorMessage}}
+    {{errorMessage}}
+  {{/if}}
+
+</form>
+
+{{#each postsFromDb}}
+
+  <div>{{this.userID.username}} {{this.userID.lastname}}: {{this.message}}</div>
+
+{{/each}}
 
