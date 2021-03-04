@@ -13,7 +13,7 @@ profile.get('/profile/', (req, res) => {
   res.render('profile', {currentUser});
 
 // Handles the post request for following a user
-router.post('/follow-user', function(req, res, next) {
+profile.post('/follow-user', function(req, res, next) {
 
   // First, find the user from the user page being viewed
   User.findOne({ username: req.body.username }, function(err, user) {
