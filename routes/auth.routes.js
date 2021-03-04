@@ -41,7 +41,7 @@ router.post('/signup', (req, res, next) => {
                 })
                 .then((userFromDb) => {
                     req.session.currentUser = userFromDb;
-                    res.redirect(`/editProfile/${userFromDb._id}`);
+                    res.redirect(`/editProfile`);
                      
                 })
                 .catch((error) => {

@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
 
 const userSchema = new Schema({
+    
     username: {
         type: String,
         trim: true,
@@ -44,6 +45,7 @@ const userSchema = new Schema({
         type: String,
         enum: ['Single', 'Dating', 'Married', 'Divorced']
     },
+
     state: String,
     
     city: String,
@@ -54,10 +56,13 @@ const userSchema = new Schema({
         type: [String],
         enum: ['Friends', 'Networking', 'Dating']
     },
+
     following:[{ type: Schema.Types.ObjectId, ref: 'user' }],
     followers:[{ type: Schema.Types.ObjectId, ref: 'user' }],
+
     });
 
 const User = model('user', userSchema);
 
 module.exports = User;
+
