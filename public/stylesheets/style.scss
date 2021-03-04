@@ -11,8 +11,9 @@ body {
     background-color: #d9e5f7;
 }
 
-#signup {
-    margin: 3cm solid red;
+.signup {
+    max-width: 450px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
 #signup .firstname {
