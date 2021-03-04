@@ -1,0 +1,7 @@
+<div>
+  <ul>
+    {{#each users}}
+    <li> <a href="/profile/{{this._id}}">{{this.username}} {{this.lastname}}</a></li>
+    {{/each}}
+  </ul>
+</div>

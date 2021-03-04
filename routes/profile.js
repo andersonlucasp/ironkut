@@ -9,8 +9,8 @@ const User = require('../models/user.model');
 
 //eu quero começar o curso do 0. como fazer?
 profile.get('/profile/', (req, res) => {
-  const { currentUser } = req.session;
-  res.render('profile', {currentUser});
+    const { currentUser } = req.session;
+    res.render('profile', { currentUser });
 
 // Handles the post request for following a user
 profile.post('/follow-user', function(req, res, next) {
@@ -60,5 +60,8 @@ profile.post('/follow-user', function(req, res, next) {
   //   })
   //   .catch(error => console.log(`Pane no sistema alguém me desconfigurou: ${error}`));
 });
+
+
+
 
 module.exports = profile;

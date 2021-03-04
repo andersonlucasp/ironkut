@@ -11,34 +11,37 @@
 
 
   <h2>Signup</h2>
+  <div class="salutation">
   <h3>Welcome to <b>Ironkut</b>! </h3>
   <p> We just need to confirm a few things before you start using Ironkut:</p>
-
+</div>
   <div id="signup">
     <form action="/signup" method="POST">
 
-      <fieldset>
+     <div class="names">
         <label for="input-username">Username</label>
         <input type="text" id="input-username" name="username" placeholder="Your username" />
         <label for="input-last">Lastname</label>
         <input type="text" id="input-lastname" name="lastname" placeholder="Your lastname" />
-      </fieldset>
+     </div>
 
-      <fieldset>
+
+     <div class="auth">
         <label for="input-email" >E-mail </label>
-        <input type="email" class="input-email" name="email" id="inputEmail1" aria-describedby="emailHelp">
+        <input type="email" class="input-email" name="email" id="inputEmail1" aria-describedby="emailHelp" placeholder="Your e-mail">
         <label for="exampleInputPassword1"  class="form-label">Password</label>
-        <input type="password" class="input-email" name="password" id="exampleInputPassword1">
+        <input type="password" class="input-email" name="password" id="exampleInputPassword1" placeholder="Your password">
+</div>
 
+     
 
-      </fieldset>
-
-      <fieldset>
+     <div class="birthday">
         <p>Birthday</p>
         <input id="date" type="date" name="birthday" >
-      </fieldset>
+     </div>
 
-      <fieldset>
+
+     <div class="genre">
         <input class="form-check-input" type="radio" name="genre"  value="female" id="flexRadioDefault1">
         <label class="form-check-label" for="flexRadioDefault1">
           Female
@@ -47,16 +50,17 @@
         <label class="form-check-label" for="flexRadioDefault2">
           Male
         </label>
-      </fieldset>
+     </div>
 
-      <fieldset>
+
+     <div class="country">
         <select class="form-select" aria-label="Default select example" name="country">
           <option selected>Country</option>
           <option value="BR">BR</option>
           <option value="PT">PT</option>
           <option value="USA">USA</option>
         </select>
-      </fieldset>
+     </div>
 
       <button type="submit">Create</button>
 

@@ -67,5 +67,13 @@ app.use('/', profile);
 const homePage = require('./routes/home.page');
 app.use('/', homePage);
 
+const search = require('./routes/busca');
+app.use('/', search);
+
+const select = require('./routes/select-search-user');
+app.use('/', select);
+
+const submit = require('./routes/submit-redirect');
+app.use('/', submit);
 
 module.exports = app;
