@@ -1,3 +1,7 @@
+@import 'reset';
+@import 'signup';
+@import 'login';
+@import 'main';
 body {
     padding: 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -8,19 +12,5 @@ a {
 }
 
 body {
-    background-color: #d9e5f7;
+    background-color: #d4dded;
 }
-
-.signup {
-    max-width: 450px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-
-#signup .firstname {
-    margin: 3cm solid red;
-}
-
-
-
-
-

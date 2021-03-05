@@ -1,0 +1,58 @@
+.signup {
+    max-width: 450px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+#signup .firstname {
+    margin: 3cm solid red;
+}
+
+.flex-align-c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-w {
+    background: white;
+    width: 100%;
+    height: 100%;
+}
+
+.p {
+    &-10 {
+        padding: 10px;
+    }
+}
+
+#login {
+    background: #e8eefa;
+    padding: 15px;
+}
+
+.img {
+    &-logo {
+        background-image: url('../images/logo.jpeg');
+        height: 175px;
+        width: 200PX;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+.signup {
+    margin-top: 15px;
+    background: #e8eefa;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    a {
+        text-transform: uppercase;
+        font-size: 18px;
+        color: #0047be;
+        font-weight: 600;
+        margin-top: 5px;
+    }
+}
