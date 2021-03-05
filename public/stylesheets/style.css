@@ -177,6 +177,13 @@ table {
   margin-top: 5px;
 }
 
+#nav-left li {
+  margin: 8px 0;
+}
+#nav-left a {
+  text-decoration: none;
+}
+
 .container {
   margin: 0 auto;
   width: 1000px;
@@ -186,13 +193,29 @@ table {
   display: flex;
 }
 
+.space-bet {
+  justify-content: space-between;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
 .col-9 {
   margin: 0 10px;
   width: 65%;
 }
+.col-11 {
+  margin: 0 10px;
+  width: 78%;
+}
 .col-3 {
   margin: 0 10px;
   width: 35%;
+}
+.col-1 {
+  margin: 0 10px;
+  width: 15%;
 }
 
 .form-label {
@@ -208,6 +231,14 @@ table {
 }
 .form-label input {
   padding: 5px 10px;
+}
+.form-label textarea {
+  padding: 10px 10px;
+  resize: none;
+}
+.form-label button {
+  align-self: flex-end;
+  margin-left: 20px;
 }
 .form-label-bg {
   background-color: #ddedff;
@@ -228,6 +259,34 @@ table {
 }
 .form-label .form-select {
   margin-left: 50px;
+}
+
+.h-0 {
+  height: auto;
+}
+
+.pl-15 {
+  padding-left: 15px;
+}
+
+.post {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.post p {
+  background-color: #5050500a;
+  padding: 10px;
+  width: 82%;
+  border: 1px solid black;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.post h4 {
+  margin: 5px 20px;
+  align-self: flex-start;
+  margin-top: 15px;
 }
 
 .msg {

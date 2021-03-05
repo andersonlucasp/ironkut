@@ -7,14 +7,30 @@
     display: flex;
 }
 
+.space-bet {
+    justify-content: space-between;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
 .col {
     &-9 {
         margin: 0 10px;
         width: 65%;
     }
+    &-11 {
+        margin: 0 10px;
+        width: 78%;
+    }
     &-3 {
         margin: 0 10px;
         width: 35%;
+    }
+    &-1 {
+        margin: 0 10px;
+        width: 15%;
     }
 }
 
@@ -30,6 +46,14 @@
     }
     input {
         padding: 5px 10px;
+    }
+    textarea {
+        padding: 10px 10px;
+        resize: none;
+    }
+    button {
+        align-self: flex-end;
+        margin-left: 20px;
     }
     &-bg {
         background-color: #ddedff;
@@ -51,6 +75,34 @@
     .form-select {
         margin-left: 50px;
     }
+}
+
+.h-0 {
+    height: auto;
+}
+
+.pl-15 {
+    padding-left: 15px;
+}
+
+.post {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    p {
+        background-color: #5050500a;
+        padding: 10px;
+        width: 82%;
+        border: 1px solid black;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+    h4 {
+        margin: 5px 20px;
+        align-self: flex-start;
+        margin-top: 15px;
+    }
+    margin-bottom: 15px;
 }
 
 .msg {
