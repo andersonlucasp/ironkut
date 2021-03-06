@@ -7,9 +7,12 @@ module.exports = app => {
     app.use(
         session({
             secret: process.env.SESS_SECRET,
-            resave: false,
+            resave: true,
             saveUninitialized: true,
-            cookie: { maxAge: 60000 },
+            cookie: {
+                maxAge: 60000,
+                sameSite: false
+            },
             store: new MongoStore({
                 //<== ADDED !!!
                 mongooseConnection: mongoose.connection,
