@@ -11,6 +11,7 @@ const User = require('../models/user.model');
 
 //eu quero começar o curso do 0. como fazer?
 profile.get('/profile', (req, res) => {
+
     const {
         currentUser
     } = req.session;
