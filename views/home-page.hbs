@@ -1,17 +1,33 @@
-{{> sideBar currentUser}}
-<form action="/post" method="POST">
+<div class="container">
+  <div class="row space-bet">
+    <div class="col-1">
+      <div class="box-w p-10 h-0">
+        {{> sideBar currentUser}}
+      </div>
+    </div>
+    <div class="col-11">
+      <div class="box-w p-10 h-0">
+        <form action="/post" method="POST">
+          <div class="form-label form-label-bg pl-15">
+            <label for="input-post">Ironte: </label>
+            <textarea type="text" rows="4" cols="60" id="input-post" name="message" placeholder="What are you thinking?"></textarea>
+            <button class="btn" type="submit">Send</button>
+          </div>
 
-  <label for="input-post">Ironte</label>
-  <input type="text" id="input-post" name="message" placeholder=" digita ai" />
-  <button type="submit">Send</button>
-  {{#if errorMessage}}
-  {{errorMessage}}
-  {{/if}}
+          {{#if errorMessage}}
+          {{errorMessage}}
+          {{/if}}
 
-</form>
-
-{{#each postsFromDb}}
-
-<div>{{this.userID.username}} {{this.userID.lastname}}: {{this.message}}</div>
-
-{{/each}}
+        </form>
+        <div class="form-label-bg pl-15">
+          {{#each postsFromDb}}
+          <div class="post">
+            <h4>{{this.userID.username}} {{this.userID.lastname}}:</h4>
+            <p>{{this.message}}</p>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

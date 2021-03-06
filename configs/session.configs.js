@@ -14,7 +14,7 @@ module.exports = app => {
                 //<== ADDED !!!
                 mongooseConnection: mongoose.connection,
                 //ttl => time to live
-                ttl: 60 * 60 * 24
+                ttl: 14 * 24 * 60 * 60
             })
         })
     );

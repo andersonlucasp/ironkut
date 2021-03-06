@@ -9,39 +9,38 @@ const User = require('../models/user.model');
 
 //get
 router.get('/editProfile/', (req, res) => {
-  const  {currentUser} = req.session;
-      res.render('edit/edit-profile', {userToEdit:currentUser});
+    const { currentUser } = req.session;
+    res.render('edit/edit-profile', { userToEdit: currentUser });
 });
 
-router.post('/editProfile/', (req,res) => {
-  const {currentUser} = req.session;
-     
-  const {
-    username,
-    lastname,
-    relationship,
-    state,
-    city,
-    hobbies,
-    interestedin
-  } = req.body;
+router.post('/editProfile/', (req, res) => {
+    const { currentUser } = req.session;
 
-  User.findByIdAndUpdate(currentUser._id, {
-    username,
-    lastname,
-    relationship,
-    state,
-    city,
-    hobbies,
-    interestedin
-  },
-  {new: true})
-  .then(updateUser => {
-    req.session.currentUser = updateUser;
-    res.redirect(`/profile/`)
-  })
-  .catch(error => console.log(`Error while updating your user. Please try again!`));
-  
+    const {
+        username,
+        lastname,
+        relationship,
+        state,
+        city,
+        hobbies,
+        interestedin
+    } = req.body;
+
+    User.findByIdAndUpdate(currentUser._id, {
+            username,
+            lastname,
+            relationship,
+            state,
+            city,
+            hobbies,
+            interestedin
+        }, { new: true })
+        .then(updateUser => {
+            req.session.currentUser = updateUser;
+            res.redirect(`/homePage/`)
+        })
+        .catch(error => console.log(`Error while updating your user. Please try again!`));
+
 });
 
 
