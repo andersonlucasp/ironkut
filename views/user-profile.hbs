@@ -1,12 +1,4 @@
-<div class="c-bar">
-  <nav class="navBar">
-    <form class="search" action="/search " method="post">
-      <label for="busca">Buscar</label>
-      <input type="search" id="busca" name="username">
-      <button type="submit" class="btn">OK</button>
-    </form>
-  </nav>
-</div>
+{{> searchPartials}}
 
 <div class="container">
   <div class="row space-bet">
@@ -19,10 +11,20 @@
     <div class="col-11">
       <div class="box-w" style="height: 100%;">
         {{#with selectedUser}}
-        <h1 class="txt-title">{{username}}</h1>
+        <h1 class="txt-title">{{username}} {{lastname}}</h1>
         <form action="/follow-user/{{id}}" style="    padding-left: 20px;" method="POST">
           <button class="btn">Follow</button>
         </form>
+
+        <h3>Details:</h3>
+
+        <ul>
+          <div class="form-label form-label-bg margin-14">Name: {{username}}</div>
+          <div class="form-label form-label-bg margin-14">State: {{state}}</div>
+          <div class="form-label form-label-bg margin-14">Country: {{country}}</div>
+          <div class="form-label form-label-bg margin-14">Genre: {{genre}}</div>
+          <div class="form-label form-label-bg margin-14">Relationship: {{relationship}}</div>
+        </ul>
         {{/with}}
       </div>
     </div>
