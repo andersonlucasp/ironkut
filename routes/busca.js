@@ -1,4 +1,6 @@
-const { Router } = require('express');
+const {
+    Router
+} = require('express');
 
 const search = new Router();
 const mongoose = require('mongoose');
@@ -11,10 +13,20 @@ search.get('/search', (req, res) => {
 });
 
 search.post('/search', (req, res) => {
-    const { username } = req.body
-    User.find({ username }).
+    const {
+        username
+    } = req.body
+    const {
+        currentUser
+    } = req.session;
+    User.find({
+        username
+    }).
     then(users => {
-        res.render(`result-search`, { users });
+        res.render(`result-search`, {
+            users,
+            currentUser
+        });
 
 
     });
