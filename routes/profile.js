@@ -21,7 +21,7 @@ profile.get('/profile', (req, res) => {
 });
 
 // Handles the post request for following a user
-profile.post('/follow-user/:id', function(req, res, next) {
+profile.post('/follow-user/:_id', function(req, res, next) {
 
     const {
         id
