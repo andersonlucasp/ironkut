@@ -300,6 +300,38 @@ table {
   cursor: pointer;
 }
 
+.c-bar {
+  background-color: #2196f3;
+}
+
+.navBar {
+  margin: 0px 100px;
+  padding: 20px 0px;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.search {
+  color: #fff;
+}
+.search label {
+  font-weight: 600;
+  margin-right: 10px;
+}
+.search input {
+  padding: 5px 10px;
+}
+
+.list {
+  padding: 10px 20px;
+}
+
+.txt-title {
+  padding: 20px;
+  margin: 0;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -311,6 +343,7 @@ a {
 
 body {
   background-color: #d4dded;
+  padding: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
