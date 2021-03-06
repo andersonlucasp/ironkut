@@ -1,6 +1,6 @@
 # IronKut
 
-![capa github](https://github.com/andersonlucasp/ironkut/tree/main/public/images/ironkut.png)  
+![capa github](https://github.com/andersonlucasp/ironkut/blob/main/public/images/ironkut.png)  
 
 ## Introduction
 
