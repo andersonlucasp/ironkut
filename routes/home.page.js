@@ -1,5 +1,7 @@
 //router auth
-const { Router } = require('express');
+const {
+  Router
+} = require('express');
 
 const homePage = new Router();
 const mongoose = require('mongoose');
@@ -8,48 +10,55 @@ const mongoose = require('mongoose');
 const User = require('../models/user.model');
 const Post = require('../models/post.model');
 const router = require('./auth.routes');
-const { create } = require('../models/user.model');
+const {
+  create
+} = require('../models/user.model');
 
-homePage.get('/homePage/', async(req,res) =>{
-      const  {currentUser} = req.session;
-      try {
-        const postsFromDb = await Post.find().populate('userID')
-        res.render('home-page', {currentUser, postsFromDb});
-      } catch (error) {
-        return next(error);
-      }     
+homePage.get('/homePage/', async (req, res) => {
+  const {
+    currentUser
+  } = req.session;
+  try {
+    const postsFromDb = await Post.find().populate('userID')
+    res.render('home-page', {
+      currentUser,
+      postsFromDb
+    });
+  } catch (error) {
+    return next(error);
+  }
 
 });
 
-homePage.post('/post',(req,res) =>{
-    const {message} =  req.body;
-    const {currentUser} = req.session;
-    Post.find()
-    .then((postsFromDb) =>{
-      if(message === ''){
+homePage.post('/post', (req, res) => {
+  const {
+    message
+  } = req.body;
+  const {
+    currentUser
+  } = req.session;
+  Post.find()
+    .then((postsFromDb) => {
+      if (message === '') {
         const errorMessage = 'Please, type someting'
-        res.render('home-page', {errorMessage, currentUser, postsFromDb})
+        res.render('home-page', {
+          errorMessage,
+          currentUser,
+          postsFromDb
+        })
         return;
       }
-      Post.create({userID:currentUser._id, message})
-      .then((postCreated) => {
-        console.log(postCreated)
-        res.redirect('/homePage/')
-        
-      })      
+      Post.create({
+          userID: currentUser._id,
+          message
+        })
+        .then((postCreated) => {
+          console.log(postCreated)
+          res.redirect('/homePage/')
+
+        })
     });
-    
-    
 
-  });
-
-      
-
-
-  // User.findById(req.params.id)
-  //   .then(profile => {
-  //     res.render('home-page', profile); //
-  //   })
-  //   .catch(error => console.log(`Pane no sistema alguém me desconfigurou: ${error}`));
+});
 
 module.exports = homePage;

@@ -1,10 +1,7 @@
- {{#if userInSession}}
-    <h2>Welcome, {{ userInSession.username }}!</h2>
-    <p>This is your profile page my friend!</p>
-    <button>
-        <a href="/user-profile/id">Reload the page</a>
-    </button>
-{{else}}
-    <p>Still no logged in user, sorry!</p>
-{{/if}}
-
+{{> sideBar currentUser}}
+{{#with selectedUser}}
+<h1>{{username}}</h1>
+<form action="/follow-user/{{id}}" method="POST">
+    <button>Follow</button>
+</form>
+{{/with}}

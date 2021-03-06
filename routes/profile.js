@@ -1,5 +1,7 @@
 //router auth
-const { Router } = require('express');
+const {
+  Router
+} = require('express');
 
 const profile = new Router();
 const mongoose = require('mongoose');
@@ -8,60 +10,40 @@ const mongoose = require('mongoose');
 const User = require('../models/user.model');
 
 //eu quero começar o curso do 0. como fazer?
-profile.get('/profile/', (req, res) => {
-    const { currentUser } = req.session;
-    res.render('profile', { currentUser });
-
-// Handles the post request for following a user
-profile.post('/follow-user', function(req, res, next) {
-
-  // First, find the user from the user page being viewed
-  User.findOne({ username: req.body.username }, function(err, user) {
-    user.followers.push(req.user._id);
-    let followedUser = user._id;
-    user.save(function(err){
-        if(err){
-           
-        }
-        else
-        {
-            // Secondly, find the user account for the logged in user
-            User.findOne({ username: req.user.username }, function(err, user) {
-
-                user.following.push(followedUser);
-                user.save(function(err){
-                    if(err){
-                        
-                    }
-                    else{
-                        
-                    }
-                });
-            });
-          }
-      });
-    });
+profile.get('/profile', (req, res) => {
+  const {
+    currentUser
+  } = req.session;
+  res.render('profile', {
+    currentUser
   });
-
-
-  
-    
-        
-
-   
-    
-
-  
-
-
-  // User.findById(id)
-  //   .then(profile => {
-  //     res.render('profile', profile); //
-  //   })
-  //   .catch(error => console.log(`Pane no sistema alguém me desconfigurou: ${error}`));
 });
 
+// Handles the post request for following a user
+profile.post('/follow-user/:id', function (req, res, next) {
 
+  const {
+    id
+  } = req.params;
 
+  const {
+    currentUser
+  } = req.session;
+
+  User.findById(currentUser._id).then((updatedUser) => {
+    updatedUser.following.push(id);
+    updatedUser.save().then(saveUpdate => {
+      User.findById(id).then((followerUpdated) => {
+        followerUpdated.followers.push(currentUser._id);
+        followerUpdated.save().then((saveFollower) => {
+          console.log(saveFollower);
+          res.redirect(`/user-profile/${id}`);
+        }).catch(error => console.log(`Error ${error}`));
+      }).catch(error => console.log(`Error ${error}`));
+      console.log(saveUpdate);
+    }).catch(error => console.log(`Error ${error}`))
+  }).catch(error => console.log(error, `Voce nao pode seguir esse user`));
+
+});
 
 module.exports = profile;

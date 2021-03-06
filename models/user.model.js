@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
 
-const { Schema, model } = mongoose;
+const {
+    Schema,
+    model
+} = mongoose;
 
 const userSchema = new Schema({
-    
+
     username: {
         type: String,
         trim: true,
@@ -43,26 +46,29 @@ const userSchema = new Schema({
     },
     relationship: {
         type: String,
-        enum: ['Single', 'Dating', 'Married', 'Divorced']
+        // enum: ['Single', 'Dating', 'Married', 'Divorced']
     },
 
     state: String,
-    
+
     city: String,
 
     hobbies: String,
 
     interestedin: {
         type: [String],
-        enum: ['Friends', 'Networking', 'Dating']
+        // enum: ['Friends', 'Networking', 'Dating']
     },
-
-    following:[{ type: Schema.Types.ObjectId, ref: 'user' }],
-    followers:[{ type: Schema.Types.ObjectId, ref: 'user' }],
-
-    });
+    following: [{
+        type: Schema.Types.ObjectId,
+        ref: 'user'
+    }],
+    followers: [{
+        type: Schema.Types.ObjectId,
+        ref: 'user'
+    }],
+});
 
 const User = model('user', userSchema);
 
 module.exports = User;
-
