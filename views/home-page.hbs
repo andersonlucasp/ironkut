@@ -1,3 +1,14 @@
+<div class="c-bar">
+  <nav class="navBar">
+    <form class="search" action="/search " method="post">
+      <label for="busca">Buscar</label>
+      <input type="search" id="busca" name="username">
+      <button type="submit" class="btn">OK</button>
+    </form>
+  </nav>
+</div>
+
+
 <div class="container">
   <div class="row space-bet">
     <div class="col-1">
@@ -5,12 +16,15 @@
         {{> sideBar currentUser}}
       </div>
     </div>
+
+
     <div class="col-11">
       <div class="box-w p-10 h-0">
         <form action="/post" method="POST">
           <div class="form-label form-label-bg pl-15">
             <label for="input-post">Ironte: </label>
-            <textarea type="text" rows="4" cols="60" id="input-post" name="message" placeholder="What are you thinking?"></textarea>
+            <textarea type="text" rows="4" cols="60" id="input-post" name="message"
+              placeholder="What are you thinking?"></textarea>
             <button class="btn" type="submit">Send</button>
           </div>
 

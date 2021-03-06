@@ -1,5 +1,49 @@
-{{> sideBar currentUser}}
+<div class="c-bar">
+  <nav class="navBar">
+    <form class="search" action="/search " method="post">
+      <label for="busca">Buscar</label>
+      <input type="search" id="busca" name="username">
+      <button type="submit" class="btn">OK</button>
+    </form>
+  </nav>
+</div>
+
+<div class="container">
+  <div class="row space-bet">
+    <div class="col-1">
+      <div class="box-w p-10 h-0">
+        {{> sideBar currentUser}}
+      </div>
+
+    </div>
+    <div class="col-11">
+      <div class="box-w" style="height: 100%;">
+        <button>Seguir</button>
+
+        <ul>
+
+          <div class="form-label form-label-bg margin-14">{{currentUser.username}}</div>
+          <div class="form-label form-label-bg margin-14">{{currentUser.state}}</div>
+          <div class="form-label form-label-bg margin-14">{{currentUser.country}}</div>
+          <div class="form-label form-label-bg margin-14">{{currentUser.genre}}</div>
+          <div class="form-label form-label-bg margin-14">{{currentUser.relationship}}</div>
+        </ul>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- <div class="container">
+  <div class="row space-bet">
+    <div class="col-1">
+      <div class="box-w p-10 h-0">
+        {{> sideBar currentUser}}
+      </div>
+    </div>
+  </div>
+</div>
 
 <button>Follow</button>
 
-{{user.username}} {{user.followers}}
+{{user.username}} {{user.followers}} --}}

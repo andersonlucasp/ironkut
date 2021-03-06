@@ -1,5 +1,39 @@
-<form action="/search " method="post">
-  <label for="busca">Search</label>
-  <input type="search" id="busca" name="username">
-  <button type="submit">OK</button>
-</form>
+
+<div class="c-bar">
+  <nav class="navBar">
+    <form class="search" action="/search " method="post">
+      <label for="busca">Buscar</label>
+      <input type="search" id="busca" name="username">
+      <button type="submit" class="btn">OK</button>
+    </form>
+  </nav>
+</div>
+
+<div class="container">
+  <div class="row space-bet">
+    <div class="col-1">
+      <div class="box-w p-10 h-0">
+        {{> sideBar currentUser}}
+      </div>
+
+    </div>
+    <div class="col-11">
+      <div class="box-w" style="height: 100%;">
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- {{> sideBar currentUser}}
+
+<div class="container">
+  <div class="row space-bet">
+    <div class="col-1">
+      <div class="box-w p-10 h-0">
+
+
+      </div>
+    </div>
+  </div>
+</div> --}}
+

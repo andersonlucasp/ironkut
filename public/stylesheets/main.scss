@@ -115,3 +115,41 @@
     padding: 5px 10px;
     cursor: pointer;
 }
+
+.c-bar {
+    background-color: #2196f3;
+}
+
+.navBar {
+    margin: 0px 100px;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.search {
+    color: #fff;
+    label {
+        font-weight: 600;
+        margin-right: 10px;
+    }
+    input {
+        padding: 5px 10px;
+    }
+}
+
+.list {
+    padding: 10px 20px;
+}
+
+.txt-title {
+    padding: 20px;
+    margin: 0;
+}
+
+.margin-14 {
+    margin: 14px;
+    padding: 15px;
+    padding-left: 15%;
+}

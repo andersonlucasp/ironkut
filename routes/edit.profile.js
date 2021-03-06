@@ -14,17 +14,7 @@ router.get('/editProfile/', (req, res) => {
 });
 
 router.post('/editProfile/', (req, res) => {
-    const { currentUser } = req.session;
 
-    const {
-        username,
-        lastname,
-        relationship,
-        state,
-        city,
-        hobbies,
-        interestedin
-    } = req.body;
 
     User.findByIdAndUpdate(currentUser._id, {
             username,

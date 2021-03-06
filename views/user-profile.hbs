@@ -1,7 +1,30 @@
-{{> sideBar currentUser}}
-{{#with selectedUser}}
-<h1>{{username}}</h1>
-<form action="/follow-user/{{id}}" method="POST">
-    <button>Follow</button>
-</form>
-{{/with}}
+<div class="c-bar">
+  <nav class="navBar">
+    <form class="search" action="/search " method="post">
+      <label for="busca">Buscar</label>
+      <input type="search" id="busca" name="username">
+      <button type="submit" class="btn">OK</button>
+    </form>
+  </nav>
+</div>
+
+<div class="container">
+  <div class="row space-bet">
+    <div class="col-1">
+      <div class="box-w p-10 h-0">
+        {{> sideBar currentUser}}
+      </div>
+
+    </div>
+    <div class="col-11">
+      <div class="box-w" style="height: 100%;">
+        {{#with selectedUser}}
+        <h1 class="txt-title">{{username}}</h1>
+        <form action="/follow-user/{{id}}" style="    padding-left: 20px;" method="POST">
+          <button class="btn">Follow</button>
+        </form>
+        {{/with}}
+      </div>
+    </div>
+  </div>
+</div>
