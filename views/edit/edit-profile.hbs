@@ -1,12 +1,4 @@
-<div class="c-bar">
-  <nav class="navBar">
-    <form class="search" action="/search " method="post">
-      <label for="busca">Buscar</label>
-      <input type="search" id="busca" name="username">
-      <button type="submit" class="btn">OK</button>
-    </form>
-  </nav>
-</div>
+{{> searchPartials}}
 
 <div class="container">
   <div class="row space-bet">
@@ -17,7 +9,7 @@
     </div>
     <div class="col-11">
       <div class="box-w p-10">
-      <h2>Edit Profile</h2>
+        <h2>Edit Profile</h2>
         <form role="form" method="POST" action="/editProfile/">
 
           <div class="form-label form-label-bg">
