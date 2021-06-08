@@ -10,7 +10,7 @@ The idea of this site was to combine all the features of our favorite social net
 
 This site was built using the following technologies: HTML5, CSS3, Javascript, Node and Handlebars. 
 
-Site link here : [https://ironkut.herokuapp.com](https://ironkut.herokuapp.com)<br>
+ 
 Presentation link here : [https://slides.com/delleprane/o-nome-do-seu-projeto-e-seu-nome](https://slides.com/delleprane/o-nome-do-seu-projeto-e-seu-nome)
 
 ## Thank you!
